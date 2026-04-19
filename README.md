@@ -166,13 +166,13 @@ http://127.0.0.1:5000/
 <div align="center">
 
 ###  Home Page — Input Form
-![Home Page](static/images/screenshot_home.png)
+![Home Page](static/screenshot_home.png)
 
 
 ---
 
 ###  Result Page — Fertilizer Recommendation
-![Result Page](static/images/screenshot_result.png)
+![Result Page](static/screenshot_result.png)
 
 
 </div>
