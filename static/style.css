@@ -1,0 +1,259 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+
+:root {
+  --brand-primary: #064e3b;
+  --brand-accent: #10b981;
+  --bg-main: #f8fafc;
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --input-border: #e2e8f0;
+  --success-bg: #f0fdf4;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background: #ffffff;
+  /* Professional subtle grain/mesh gradient */
+  background-image:
+    radial-gradient(at 0% 0%, hsla(161, 68%, 93%, 1) 0, transparent 50%),
+    radial-gradient(at 50% 0%, hsla(187, 76%, 96%, 1) 0, transparent 50%),
+    radial-gradient(at 100% 0%, hsla(161, 68%, 93%, 1) 0, transparent 50%);
+  color: var(--text-main);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 40px 20px;
+}
+
+.container {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(20px);
+  width: 100%;
+  max-width: 850px;
+  padding: 0;
+  border-radius: 20px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  overflow: hidden;
+}
+
+/* Header Section */
+h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+  background: var(--brand-primary);
+  padding: 2rem;
+  margin: 0;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+form {
+  padding: 2.5rem;
+}
+
+/* Utility Box for Weather */
+.grid:first-of-type {
+  display: flex;
+  gap: 12px;
+  background: #f1f5f9;
+  padding: 1rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  align-items: center;
+}
+
+.grid:first-of-type input {
+  flex: 2;
+  background: white;
+}
+
+/* Data Input Grid */
+.grid:last-of-type {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
+
+/* Input Styling */
+input,
+select {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  border: 1px solid var(--input-border);
+  border-radius: 10px;
+  background-color: #fff;
+  color: var(--text-main);
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: var(--brand-accent);
+  box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.1);
+  transform: translateY(-1px);
+}
+
+/* Modern Button Styling */
+button {
+  font-family: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: all 0.2s ease;
+  border: none;
+}
+
+button[type="button"] {
+  background-color: var(--brand-primary);
+  color: white;
+  padding: 0.875rem 1.5rem;
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+
+button[type="submit"] {
+  width: 100%;
+  background-color: var(--brand-accent);
+  color: white;
+  padding: 1.125rem;
+  font-size: 1rem;
+  margin-top: 2rem;
+  box-shadow: 0 4px 14px 0 rgba(16, 185, 129, 0.39);
+}
+
+button:hover {
+  filter: brightness(1.1);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+/* Pro Result Card */
+.result {
+  margin: 0 2.5rem 2.5rem 2.5rem;
+  padding: 2rem;
+  background: var(--success-bg);
+  border-radius: 16px;
+  border: 1px dashed var(--brand-accent);
+  animation: reveal 0.4s ease-out;
+}
+/* --- Add this to your existing CSS --- */
+
+/* The Pro Application 'Sticker' */
+.container::after {
+  content: "";
+  position: absolute;
+  bottom: -30px;
+  right: -30px;
+  width: 150px;
+  height: 150px;
+  background: url("image.png") no-repeat center;
+  background-size: contain;
+  opacity: 0.05; /* Keeps it professional and subtle */
+  pointer-events: none;
+  transform: rotate(-15deg);
+  z-index: 0;
+}
+
+/* Optional: Adding a "Professional Badge" Sticker to the top left */
+.container::before {
+  content: "AGRI-ANALYTICS v2.0";
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 10px;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.5);
+  letter-spacing: 2px;
+  z-index: 10;
+}
+
+/* Sleek Live Pulse for the Header */
+h1::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background-color: #34d399; /* Bright mint pulse */
+  border-radius: 50%;
+  margin-right: 12px;
+  box-shadow: 0 0 0 rgba(52, 211, 153, 0.4);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 10px rgba(52, 211, 153, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(52, 211, 153, 0);
+  }
+}
+
+/* Ensure the result card stays above the sticker */
+.result {
+  position: relative;
+  z-index: 5;
+}
+@keyframes reveal {
+  from {
+    opacity: 0;
+    clip-path: inset(0 0 100% 0);
+  }
+  to {
+    opacity: 1;
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+.result h2 {
+  font-size: 1.1rem;
+  color: var(--brand-primary);
+  margin-bottom: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.result p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-top: 0.5rem;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 640px) {
+  .grid:last-of-type {
+    grid-template-columns: 1fr;
+  }
+  form {
+    padding: 1.5rem;
+  }
+  h1 {
+    font-size: 1.2rem;
+    padding: 1.5rem;
+  }
+}
